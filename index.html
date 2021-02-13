@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knockout!</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <script src="scripts/scripts.js"></script>
 </head>
 <body>
     <header>
         <h1>Knockout</h1>
     </header>
     <main>
-        <img src="imgs/coin.png" alt="a coin.">
-        <p>You have <span>0</span> punches</p>
+        <img src="imgs/coin.png" onclick="punch()">
+        <p>You have <span id="punches">0</span> punches</p>
     </main>
     <footer>
         Created by
