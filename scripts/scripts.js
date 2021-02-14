@@ -9,11 +9,11 @@ var muscleBought = 0;
 var ironGloveBought = 0;
 var thanosGloveBought = 0;
 
-var bag = "/imgs/og_bag.png";
-var bag1 = "/imgs/og_bag_effect1.png";
-var bag2 = "/imgs/og_bag_effect2.png";
-var bag3 = "/imgs/og_bag_effect3.png";
-var bag4 = "/imgs/og_bag_broken.png";
+var bag = "./imgs/og_bag.png";
+var bag1 = "./imgs/og_bag_effect1.png";
+var bag2 = "./imgs/og_bag_effect2.png";
+var bag3 = "./imgs/og_bag_effect3.png";
+var bag4 = "./imgs/og_bag_broken.png";
 
 const MUSCLE_UPGRADE_PRICE = 10;
 const GLOVE_UPGRADE_PRICE = 300;
@@ -38,7 +38,7 @@ function sound(src) {
 
 window.onload=function() {
     var punchingBag = document.getElementById("sandbag");
-    var punchSound = new sound("/sounds/punch-sound-final.mp3");
+    var punchSound = new sound("./sounds/punch-sound-final.mp3");
     punchingBag.addEventListener("click", function() {
         numPunches += (punchesPerClick + punchesPerClick * boxingGlovesRedBought);
         var punchCounter = document.getElementById("punches");
@@ -128,11 +128,11 @@ function buySandbag() {
         document.getElementById("betterSandbagBuy").disabled = true;
         console.log("bought sandbag upgrade");
 
-        bag = "/imgs/gold_bag.png";
-        bag1 = "/imgs/gold_bag_effect1.png";
-        bag2 = "/imgs/gold_bag_effect2.png";
-        bag3 = "/imgs/gold_bag_effect3.png";
-        bag4 = "/imgs/gold_bag_broken.png";
+        bag = "./imgs/gold_bag.png";
+        bag1 = "./imgs/gold_bag_effect1.png";
+        bag2 = "./imgs/gold_bag_effect2.png";
+        bag3 = "./imgs/gold_bag_effect3.png";
+        bag4 = "./imgs/gold_bag_broken.png";
         document.getElementById("sandbag").src = bag;    
     } else {
         // alert("Not enough punches."); // temp
@@ -159,7 +159,7 @@ function buyIronGloves() {
 
         var punchingBag = document.getElementById("sandbag");
         var interval_;
-        punchSound = new sound("/sounds/punch-sound-final.mp3");
+        punchSound = new sound("./sounds/punch-sound-final.mp3");
         
         punchingBag.onmousedown = function() {
             interval_ = setInterval( function() { 
