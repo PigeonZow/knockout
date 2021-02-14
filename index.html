@@ -13,13 +13,12 @@
 
 <body>
     <header>
-        <h1>Knockout</h1>
+        <h1><img src="imgs/knockout.png"></h1>
     </header>
     <main>
-
         <div class="game">
             <div class="interface">
-                <img class="sandbag" src="imgs/og_bag.png" onclick="punch()">
+                <img id="sandbag" src="imgs/og_bag.png" onclick="punch()">
                 <p class="punches-text">You have <span id="punches">0</span> punches (<span id="punchesPerClick">1</span> punches per click)</p>
             </div>
             
@@ -29,8 +28,6 @@
                 <p>Boxing Gloves - 300 punches <button id="boxingGlovesBuy" onclick="buyGloves()">Buy</button></p>
                 <p>Better Sandbag - 500 punches <button id="betterSandbagBuy">Buy</button></p>
             </div>
-        </div>
-
     </main>
     <footer>
         Created by joe

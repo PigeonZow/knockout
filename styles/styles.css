@@ -12,8 +12,7 @@ body{
     src: url(fonts/28days.ttf);
   }
 
-.sandbag{
-    
+#sandbag{
     height: 700px;
     width: 700px;
 } 
@@ -32,6 +31,11 @@ body{
 header{
     text-align: center;
     font-size: 2em;
+    margin: 0;
+}
+
+h1{
+    margin: 0;
 }
 
 main{
