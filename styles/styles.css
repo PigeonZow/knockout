@@ -12,7 +12,7 @@ body{
     src: url(fonts/28days.ttf);
   }
 
-.sandbag{
+#sandbag{
     
     height: 700px;
     width: 700px;
