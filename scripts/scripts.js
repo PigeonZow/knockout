@@ -1,4 +1,4 @@
-var numPunches = 10000;
+var numPunches = 0;
 var punchesPerClick = 1;
 
 var boxingGlovesRedBought = 0;
@@ -7,17 +7,19 @@ var boxingGlovesRedBought = 0;
 var betterSandbagBought = 0;
 var muscleBought = 0;
 var ironGloveBought = 0;
+var thanosGloveBought = 0;
 
 var bag = "./imgs/og_bag.png";
 var bag1 = "./imgs/og_bag_effect1.png";
 var bag2 = "./imgs/og_bag_effect2.png";
 var bag3 = "./imgs/og_bag_effect3.png";
+var bag4 = "./imgs/og_bag_broken.png";
 
 const MUSCLE_UPGRADE_PRICE = 10;
 const GLOVE_UPGRADE_PRICE = 300;
-const SANDBAG_UPGRADE_PRICE = 500;
+const SANDBAG_UPGRADE_PRICE = 2000;
 const IRONGLOVE_UPGRADE_PRICE = 1000;
-const THANOSGLOVE_UPGRADE_PRICE = 100000;
+const THANOSGLOVE_UPGRADE_PRICE = 50000;
 
 function sound(src) {
     this.sound = document.createElement("audio");
@@ -36,7 +38,7 @@ function sound(src) {
 
 window.onload=function() {
     var punchingBag = document.getElementById("sandbag");
-    var punchSound = new sound("./sounds/punch_sound_final.mp3");
+    var punchSound = new sound("./sounds/punch-sound-final.mp3");
     punchingBag.addEventListener("click", function() {
         numPunches += (punchesPerClick + punchesPerClick * boxingGlovesRedBought);
         var punchCounter = document.getElementById("punches");
@@ -85,7 +87,7 @@ function buyRedGloves() {
         document.getElementById("boxingGlovesRedBuy").disabled = true;
         console.log("bought red glove upgrade"); 
     } else {
-        alert("Not enough punches."); // temp
+        notEnoughPunches();
         console.log("not enough punches for red gloves upgrade"); // debug
     }
 }
@@ -130,6 +132,7 @@ function buySandbag() {
         bag1 = "./imgs/gold_bag_effect1.png";
         bag2 = "./imgs/gold_bag_effect2.png";
         bag3 = "./imgs/gold_bag_effect3.png";
+        bag4 = "./imgs/gold_bag_broken.png";
         document.getElementById("sandbag").src = bag;    
     } else {
         // alert("Not enough punches."); // temp
@@ -139,12 +142,11 @@ function buySandbag() {
 }
 
 function notEnoughPunches(){
-    var i;
     document.getElementById("punches-text").style.color = '#7B0202';
     
     setTimeout(() => {
         document.getElementById("punches-text").style.color = '#000000';
-    }, 300)
+    }, 200)
 }
 
 function buyIronGloves() {
@@ -157,7 +159,7 @@ function buyIronGloves() {
 
         var punchingBag = document.getElementById("sandbag");
         var interval_;
-        punchSound = new sound("./sounds/punch_sound_final.mp3");
+        punchSound = new sound("./sounds/punch-sound-final.mp3");
         
         punchingBag.onmousedown = function() {
             interval_ = setInterval( function() { 
@@ -172,7 +174,41 @@ function buyIronGloves() {
             clearInterval(interval_);
         }
     } else {
-        alert("Not enough punches."); // temp
+        notEnoughPunches();
         console.log("not enough punches for iron glove upgrade"); // debug
     }
+}
+
+function buyThanos() {
+    if (numPunches >= THANOSGLOVE_UPGRADE_PRICE && !thanosGloveBought) {
+        numPunches -= THANOSGLOVE_UPGRADE_PRICE;
+        document.getElementById("punches").innerHTML = numPunches;
+        ironGloveBought = 1;
+        document.getElementById("thanosGloveBuy").disabled = true;
+        console.log("bought thanos glove");
+
+        var punchingBag = document.getElementById("sandbag");
+        var explosionSound = new sound("./sounds/Explosion.mp3");
+        punchingBag.addEventListener("click", function() {
+            explosionSound.play();
+            victory();
+        });
+    } else {
+        notEnoughPunches();
+        console.log("not enough punches for thanos glove upgrade");
+    }
+}
+
+function victory() {
+    document.getElementById("sandbag").src = bag4;
+
+    // remove all event listeners
+    var element = document.getElementById('sandbag'),
+        elementClone = element.cloneNode(true);
+    element.parentNode.replaceChild(elementClone, element);
+    document.getElementById("sandbag").src = bag4;
+    document.getElementById("punches-text").innerHTML = "YOU WIN";
+    setTimeout(function() {
+        document.getElementById("sandbag").src = bag4;
+    }, 50) // bad fix but no time left
 }

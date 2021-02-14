@@ -10,7 +10,7 @@ body{
 @font-face {
     font-family: '28days';
     src: url(fonts/28days.ttf);
-  }
+}
 
 #sandbag{
     height: 700px;
