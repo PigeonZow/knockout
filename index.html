@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="scripts/scripts.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="imgs/effect.png">
+
+    
 </head>
 
 
@@ -18,15 +21,36 @@
     <main>
         <div class="game">
             <div class="interface">
-                <img id="sandbag" src="imgs/og_bag.png" onclick="punch()">
+                <img id="sandbag" src="imgs/og_bag.png">
                 <p class="punches-text">You have <span id="punches">0</span> punches (<span id="punchesPerClick">1</span> punches per click)</p>
             </div>
             
             <div class="shop">
                 <h3>Shop</h3>
-                <p>Muscle Training (Repeatable) - 10 punches <button id="muscleTrainingBuy" onclick="buyMuscle()">Buy</button></p>
-                <p>Boxing Gloves - 300 punches <button id="boxingGlovesBuy" onclick="buyGloves()">Buy</button></p>
-                <p>Better Sandbag - 500 punches <button id="betterSandbagBuy">Buy</button></p>
+                <p>
+                    Muscle Training (Repeatable): 10 punches 
+                    <button id="muscleTrainingBuy" onclick="buyMuscle()">Buy</button>
+                </p>
+                <p>
+                    Red Boxing Gloves: 300 punches 
+                    <button id="boxingGlovesRedBuy" onclick="buyRedGloves()">Buy</button>
+                </p>
+                <!-- <p>
+                    Blue Boxing Gloves: 300 punches 
+                    <button id="boxingGlovesBlueBuy" onclick="buyBlueGloves()">Buy</button>
+                </p>
+                <p>
+                    Pink Boxing Gloves: 300 punches 
+                    <button id="boxingGlovesPinkBuy" onclick="buyPinkGloves()">Buy</button>
+                </p> -->
+                <p>
+                    Iron Man Glove: 1000
+                    <button id="ironGloveBuy" onclick="buyIronGloves()">Buy</button>
+                </p>
+                <p>
+                    Golden Sandbag: 2000 punches 
+                    <button id="betterSandbagBuy" onclick="buySandbag()">Buy</button>
+                </p>
             </div>
     </main>
     <footer>

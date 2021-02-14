@@ -59,5 +59,20 @@ button{
 button:hover{
     cursor: pointer;
     color: #7B0202;
-    
+}
+
+/* tooltips */
+
+.shopTooltip {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 4px;
+    position: absolute;
+}
+
+.shop p:hover .shopTooltip {
+    visibility: visible;
 }
