@@ -28,14 +28,14 @@ function punch() {
 function choosePunchedAnimation() {
     var randomInt = Math.floor(Math.random() * 3);
     if (randomInt == 0) {
-        document.getElementById("sandbag").src = "../imgs/og_bag_effect1.png";
+        document.getElementById("sandbag").src = "./imgs/og_bag_effect1.png";
     } else if (randomInt == 1) {
-        document.getElementById("sandbag").src = "../imgs/og_bag_effect2.png";
+        document.getElementById("sandbag").src = "./imgs/og_bag_effect2.png";
     } else {
-        document.getElementById("sandbag").src = "../imgs/og_bag_effect3.png";
+        document.getElementById("sandbag").src = "./imgs/og_bag_effect3.png";
     }
     setTimeout(() => {
-        document.getElementById("sandbag").src = "../imgs/og_bag.png";
+        document.getElementById("sandbag").src = "./imgs/og_bag.png";
     }, 100)
         
     console.log("played animation " + randomInt); // debug
