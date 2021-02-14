@@ -3,7 +3,7 @@ body{
     background-image: url(bricks.jpg);
 }
 
-.punches-text{
+#punches-text{
     font-size: 1.5em;
 }
 
@@ -38,6 +38,10 @@ h1{
     margin: 0;
 }
 
+h3{
+    font-size: 2em;
+}
+
 main{
     
     width: 100%;
@@ -61,6 +65,10 @@ button:hover{
     cursor: pointer;
     color: #7B0202;
     
+}
+
+button:disabled{
+    color: #696969
 }
 
 .muscleTrainingIcon{
