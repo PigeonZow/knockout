@@ -9,16 +9,28 @@
     <script src="scripts/scripts.js"></script>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
+
 <body>
     <header>
         <h1>Knockout</h1>
     </header>
     <main>
-        <img src="imgs/coin.png" onclick="punch()">
-        <p>You have <span id="punches">0</span> punches</p>
+        <div>
+            <img class="sandbag" src="imgs/og_bag.png" onclick="punch()">
+            <p class="punches-text">You have <span id="punches">0</span> punches (<span id="punchesPerClick">1</span> punches per click)</p>
+        </div>
+        
+        <div class="shop">
+            <h3>Shop</h3>
+            <p>Muscle Training (Repeatable) - 10 punches <button id="muscleTrainingBuy" onclick="buyMuscle()">Buy</button></p>
+            <p>Boxing Gloves - 300 punches <button id="boxingGlovesBuy" onclick="buyGloves()">Buy</button></p>
+            <p>Better Sandbag - 500 punches <button id="betterSandbagBuy">Buy</button></p>
+        </div>
+
     </main>
     <footer>
-        Created by
+        Created by joe
     </footer>
 </body>
-</html>
+</html> 
