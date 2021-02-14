@@ -1,29 +1,40 @@
 body{
-    font-family: myFirstFont;
+    font-family: '28days';
     background-image: url(bricks.jpg);
 }
 
 .punches-text{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 @font-face {
-    font-family: myFirstFont;
+    font-family: '28days';
     src: url(fonts/28days.ttf);
   }
 
 .sandbag{
-    height: 300px;
-    width: 300px
+    height: 550px;
+    width: 550px;
 }
 
 header{
     text-align: center;
-    
+    font-size: 2em;
 }
 
 main{
     
     width: 100%;
     text-align: center;
+}
+
+.shop{
+    text-align: left;
+    font-size: 1.3em;
+}
+
+button{
+    font-family: '28days';
+    background-image: url(bricks3.jpg);
+    font-size: 1.3em;
 }

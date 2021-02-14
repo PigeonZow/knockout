@@ -36,6 +36,7 @@ function buyGloves() {
         boxingGlovesBought = 1;
         var punchMeter = document.getElementById("punchesPerClick") 
         punchMeter.innerHTML = (punchesPerClick + punchesPerClick * boxingGlovesBought);
+        document.getElementById("boxingGlovesBuy").disabled = true;
     } else {
         console.log("not enough punches for gloves")
         alert("Not enough punches.")
