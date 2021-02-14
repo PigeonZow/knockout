@@ -64,7 +64,7 @@ button{
 button:hover{
     cursor: pointer;
     color: #7B0202;
-    
+   
 }
 
 button:disabled{
@@ -90,4 +90,5 @@ button:disabled{
     top: 15px;
     height: 75px;
     width: 75px;
+
 }
