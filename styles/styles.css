@@ -3,7 +3,7 @@ body{
     background-image: url(bricks.jpg);
 }
 
-.punches-text{
+#punches-text{
     font-size: 1.5em;
 }
 
@@ -38,6 +38,10 @@ h1{
     margin: 0;
 }
 
+h3{
+    font-size: 2em;
+}
+
 main{
     
     width: 100%;
@@ -53,26 +57,38 @@ button{
     font-family: '28days';
     background-image: url(bricks3.jpg);
     font-size: 1.3em;
+    
     outline: none;
 }
 
 button:hover{
     cursor: pointer;
     color: #7B0202;
+   
 }
 
-/* tooltips */
-
-.shopTooltip {
-    visibility: hidden;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 4px;
-    position: absolute;
+button:disabled{
+    color: #696969
 }
 
-.shop p:hover .shopTooltip {
-    visibility: visible;
+.muscleTrainingIcon{
+    position: relative;
+    top: 10px;
+    height: 75px;
+    width: 75px;
+}
+
+.boxingGloveIcon{
+    position: relative;
+    top: 15px;
+    height: 75px;
+    width: 75px;
+}
+
+.bagUpgradeIcon{
+    position: relative;
+    top: 15px;
+    height: 75px;
+    width: 75px;
+
 }

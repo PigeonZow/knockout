@@ -91,7 +91,7 @@ function buyMuscle() {
         document.getElementById("punchesPerClick").innerHTML = (punchesPerClick + punchesPerClick * boxingGlovesRedBought);
         console.log("bought muscle upgrade");
     } else {
-        alert("Not enough punches."); // temp
+        notEnoughPunches();
         console.log("not enough punches for muscle upgrade"); // debug
     }
 }
@@ -149,6 +149,17 @@ function buySandbag() {
         alert("Not enough punches."); // temp
         console.log("not enough punches for sandbag upgrade"); // debug
     }
+}
+
+function notEnoughPunches(){
+    var i;
+    document.getElementById("punches-text").style.color = '#7B0202';
+    
+    setTimeout(() => {
+        document.getElementById("punches-text").style.color = '#000000';
+    }, 300)
+
+    
 }
 
 function buyIronGloves() {
