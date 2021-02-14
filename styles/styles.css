@@ -19,13 +19,15 @@ body{
 
 .interface{
     padding-left: 10%;
-    
+    font-size: x-large;
+    margin: 0;
 }
 
 .game{
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
+    margin-left: 5%;
 }
 
 header{
@@ -40,6 +42,7 @@ h1{
 
 h3{
     font-size: 2em;
+    margin: 0;
 }
 
 main{
@@ -51,6 +54,7 @@ main{
 .shop{
     text-align: left;
     font-size: 2em;
+    margin: 0;
 }
 
 button{
@@ -71,24 +75,9 @@ button:disabled{
     color: #696969
 }
 
-.muscleTrainingIcon{
-    position: relative;
-    top: 10px;
-    height: 75px;
-    width: 75px;
-}
-
-.boxingGloveIcon{
+.icon {
     position: relative;
     top: 15px;
     height: 75px;
     width: 75px;
-}
-
-.bagUpgradeIcon{
-    position: relative;
-    top: 15px;
-    height: 75px;
-    width: 75px;
-
 }

@@ -1,4 +1,4 @@
-var numPunches = 1000;
+var numPunches = 10000;
 var punchesPerClick = 1;
 
 var boxingGlovesRedBought = 0;
@@ -8,27 +8,16 @@ var betterSandbagBought = 0;
 var muscleBought = 0;
 var ironGloveBought = 0;
 
-var punchesUntilBreak = 25;
-var sandbagDurability = 25;
+var bag = "./imgs/og_bag.png";
+var bag1 = "./imgs/og_bag_effect1.png";
+var bag2 = "./imgs/og_bag_effect2.png";
+var bag3 = "./imgs/og_bag_effect3.png";
 
 const MUSCLE_UPGRADE_PRICE = 10;
 const GLOVE_UPGRADE_PRICE = 300;
 const SANDBAG_UPGRADE_PRICE = 500;
 const IRONGLOVE_UPGRADE_PRICE = 1000;
 const THANOSGLOVE_UPGRADE_PRICE = 100000;
-
-// function punch() {
-//     numPunches += (punchesPerClick + punchesPerClick * boxingGlovesRedBought);
-//     var punchCounter = document.getElementById("punches");
-//     punchCounter.innerHTML = numPunches;
-//     punchesUntilBreak--;
-
-//     // if (punchesUntilBreak <= 0) {
-//     //     breakPunchingBag();
-//     // }
-
-//     choosePunchedAnimation();
-// }
 
 function sound(src) {
     this.sound = document.createElement("audio");
@@ -52,12 +41,7 @@ window.onload=function() {
         numPunches += (punchesPerClick + punchesPerClick * boxingGlovesRedBought);
         var punchCounter = document.getElementById("punches");
         punchCounter.innerHTML = numPunches;
-        punchesUntilBreak--;
         punchSound.play();
-        // if (punchesUntilBreak <= 0) {
-        //     breakPunchingBag();
-        // }
-    
         choosePunchedAnimation();
     });
 }
@@ -65,22 +49,18 @@ window.onload=function() {
 function choosePunchedAnimation() {
     var randomInt = Math.floor(Math.random() * 3);
     if (randomInt == 0) {
-        document.getElementById("sandbag").src = "./imgs/og_bag_effect1.png";
+        document.getElementById("sandbag").src = bag1;
     } else if (randomInt == 1) {
-        document.getElementById("sandbag").src = "./imgs/og_bag_effect2.png";
+        document.getElementById("sandbag").src = bag2;
     } else {
-        document.getElementById("sandbag").src = "./imgs/og_bag_effect3.png";
+        document.getElementById("sandbag").src = bag3;
     }
     setTimeout(() => {
-        document.getElementById("sandbag").src = "./imgs/og_bag.png";
+        document.getElementById("sandbag").src = bag;
     }, 50)
         
     console.log("played animation " + randomInt); // debug
 }
-
-// function breakPunchingBag() {
-
-// }
 
 function buyMuscle() {
     if (numPunches >= MUSCLE_UPGRADE_PRICE) {
@@ -145,8 +125,15 @@ function buySandbag() {
         betterSandbagBought = 1;
         document.getElementById("betterSandbagBuy").disabled = true;
         console.log("bought sandbag upgrade");
+
+        bag = "./imgs/gold_bag.png";
+        bag1 = "./imgs/gold_bag_effect1.png";
+        bag2 = "./imgs/gold_bag_effect2.png";
+        bag3 = "./imgs/gold_bag_effect3.png";
+        document.getElementById("sandbag").src = bag;    
     } else {
-        alert("Not enough punches."); // temp
+        // alert("Not enough punches."); // temp
+        notEnoughPunches();
         console.log("not enough punches for sandbag upgrade"); // debug
     }
 }
@@ -158,8 +145,6 @@ function notEnoughPunches(){
     setTimeout(() => {
         document.getElementById("punches-text").style.color = '#000000';
     }, 300)
-
-    
 }
 
 function buyIronGloves() {
@@ -172,20 +157,14 @@ function buyIronGloves() {
 
         var punchingBag = document.getElementById("sandbag");
         var interval_;
-        var punchSound = new sound("./sounds/punch_sound_final.mp3");
+        punchSound = new sound("./sounds/punch_sound_final.mp3");
         
         punchingBag.onmousedown = function() {
             interval_ = setInterval( function() { 
                 numPunches += (punchesPerClick + punchesPerClick * boxingGlovesRedBought);
                 var punchCounter = document.getElementById("punches");
                 punchCounter.innerHTML = numPunches;
-                punchesUntilBreak--;
                 punchSound.play();
-            
-                // if (punchesUntilBreak <= 0) {
-                //     breakPunchingBag();
-                // }
-            
                 choosePunchedAnimation();
             }, 100);;
         }
