@@ -14,12 +14,31 @@ const SANDBAG_UPGRADE_PRICE = 500;
 
 function punch() {
     numPunches += (punchesPerClick + punchesPerClick * boxingGlovesBought);
-    var punchCounter = document.getElementById("punches")
+    var punchCounter = document.getElementById("punches");
     punchCounter.innerHTML = numPunches;
+    punchesUntilBreak--;
 
     // if (punchesUntilBreak <= 0) {
     //     breakPunchingBag();
     // }
+
+    choosePunchedAnimation();
+}
+
+function choosePunchedAnimation() {
+    var randomInt = Math.floor(Math.random() * 3);
+    if (randomInt == 0) {
+        document.getElementById("sandbag").src = "../imgs/og_bag_effect1.png";
+    } else if (randomInt == 1) {
+        document.getElementById("sandbag").src = "../imgs/og_bag_effect2.png";
+    } else {
+        document.getElementById("sandbag").src = "../imgs/og_bag_effect3.png";
+    }
+    setTimeout(() => {
+        document.getElementById("sandbag").src = "../imgs/og_bag.png";
+    }, 100)
+        
+    console.log("played animation " + randomInt); // debug
 }
 
 // function breakPunchingBag() {
@@ -49,19 +68,19 @@ function buyGloves() {
         document.getElementById("boxingGlovesBuy").disabled = true;
         console.log("bought glove upgrade"); 
     } else {
-        console.log("not enough punches for gloves upgrade"); // debug
         alert("Not enough punches."); // temp
+        console.log("not enough punches for gloves upgrade"); // debug
     }
 }
 
 function buySandbag() {
     if (numPunches >= SANDBAG_UPGRADE_PRICE && !betterSandbagBought) {
         numPunches -= SANDBAG_UPGRADE_PRICE;
-        console.log("bought sandbag upgrade");
         betterSandbagBought = 1;
+        console.log("bought sandbag upgrade");
     } else {
-        console.log("not enough punches for sandbag upgrade"); // debug
         alert("Not enough punches."); // temp
+        console.log("not enough punches for sandbag upgrade"); // debug
     }
 }
 
