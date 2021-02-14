@@ -3,14 +3,14 @@ body{
     background-image: url(bricks.jpg);
 }
 
-.punches-text{
+#punches-text{
     font-size: 1.5em;
 }
 
 @font-face {
     font-family: '28days';
     src: url(fonts/28days.ttf);
-  }
+}
 
 #sandbag{
     height: 700px;
@@ -19,13 +19,15 @@ body{
 
 .interface{
     padding-left: 10%;
-    
+    font-size: x-large;
+    margin: 0;
 }
 
 .game{
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
+    margin-left: 5%;
 }
 
 header{
@@ -38,6 +40,11 @@ h1{
     margin: 0;
 }
 
+h3{
+    font-size: 2em;
+    margin: 0;
+}
+
 main{
     
     width: 100%;
@@ -47,6 +54,7 @@ main{
 .shop{
     text-align: left;
     font-size: 2em;
+    margin: 0;
 }
 
 button{
@@ -60,24 +68,14 @@ button{
 button:hover{
     cursor: pointer;
     color: #7B0202;
-    
+   
 }
 
-.muscleTrainingIcon{
-    position: relative;
-    top: 10px;
-    height: 75px;
-    width: 75px;
+button:disabled{
+    color: #696969
 }
 
-.boxingGloveIcon{
-    position: relative;
-    top: 15px;
-    height: 75px;
-    width: 75px;
-}
-
-.bagUpgradeIcon{
+.icon {
     position: relative;
     top: 15px;
     height: 75px;
