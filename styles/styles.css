@@ -53,6 +53,7 @@ button{
     font-family: '28days';
     background-image: url(bricks3.jpg);
     font-size: 1.3em;
+    
     outline: none;
 }
 
@@ -60,4 +61,25 @@ button:hover{
     cursor: pointer;
     color: #7B0202;
     
+}
+
+.muscleTrainingIcon{
+    position: relative;
+    top: 10px;
+    height: 75px;
+    width: 75px;
+}
+
+.boxingGloveIcon{
+    position: relative;
+    top: 15px;
+    height: 75px;
+    width: 75px;
+}
+
+.bagUpgradeIcon{
+    position: relative;
+    top: 15px;
+    height: 75px;
+    width: 75px;
 }
