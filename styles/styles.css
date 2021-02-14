@@ -13,13 +13,29 @@ body{
   }
 
 #sandbag{
-    height: 550px;
-    width: 550px;
+    height: 700px;
+    width: 700px;
+} 
+
+.interface{
+    padding-left: 10%;
+    
+}
+
+.game{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
 }
 
 header{
     text-align: center;
     font-size: 2em;
+    margin: 0;
+}
+
+h1{
+    margin: 0;
 }
 
 main{
@@ -30,11 +46,18 @@ main{
 
 .shop{
     text-align: left;
-    font-size: 1.3em;
+    font-size: 2em;
 }
 
 button{
     font-family: '28days';
     background-image: url(bricks3.jpg);
     font-size: 1.3em;
+    outline: none;
+}
+
+button:hover{
+    cursor: pointer;
+    color: #7B0202;
+    
 }
